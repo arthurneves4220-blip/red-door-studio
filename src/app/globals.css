@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-off-white: #FAFAF8;
+  --color-light-gray: #E8E5E0;
+  --color-warm-gray: #6B6560;
+  --color-elegant-black: #1A1A1A;
+  --color-gold: #C9A34E;
+  --color-wine-red: #8E1F2D;
+  --color-copper: #B87333;
+
+  /* Fonts */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAFAF8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A34E;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8E1F2D;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Selection */
+::selection {
+  background-color: #C9A34E;
+  color: #FFFFFF;
+}
+
+/* Base styles */
+body {
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gold gradient text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #C9A34E 0%, #E8D48B 50%, #C9A34E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle shadow for cards */
+.shadow-luxury {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03), 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.shadow-luxury-hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Red door shape */
+.red-door {
+  position: relative;
+  width: 120px;
+  height: 200px;
+  background: linear-gradient(180deg, #8E1F2D 0%, #6B1520 100%);
+  border-radius: 60px 60px 4px 4px;
+}
+
+.red-door::before {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: #C9A34E;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+/* Elegant divider */
+.divider-gold {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A34E, transparent);
+}
+
+/* Button styles */
+.btn-primary {
+  background: #1A1A1A;
+  color: #FFFFFF;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background: #8E1F2D;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(142, 31, 45, 0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #1A1A1A;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border: 1px solid #1A1A1A;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background: #1A1A1A;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Image hover effect */
+.image-hover {
+  overflow: hidden;
+}
+
+.image-hover img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-hover:hover img {
+  transform: scale(1.05);
+}
+
+/* Gold underline animation */
+.gold-underline {
+  position: relative;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #C9A34E;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gold-underline:hover::after {
+  width: 100%;
+}
