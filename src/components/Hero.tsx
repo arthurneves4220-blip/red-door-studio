@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-20"
     >
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-off-white via-white to-light-gray" />
@@ -100,7 +100,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-xs tracking-[0.3em] uppercase text-warm-gray">
           Descubra
