@@ -80,7 +80,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-24 lg:py-32 bg-white">
+    <section id="servicos" className="py-24 lg:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal className="text-center mb-16 lg:mb-20">
@@ -100,46 +100,82 @@ export default function Services() {
             com produtos profissionais e técnicas de última geração.
           </p>
         </ScrollReveal>
+      </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      {/* Carousel Container */}
+      <div className="relative">
+        {/* Gradient Overlays */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+        {/* Carousel Track */}
+        <div className="carousel-track flex gap-6 px-6">
+          {/* First set of services */}
           {services.map((service, index) => (
-            <ScrollReveal key={service.title} delay={index * 0.05}>
-              <motion.div
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-luxury hover:shadow-luxury-hover transition-all duration-500 cursor-pointer"
-              >
-                {/* Image Placeholder */}
-                <div
-                  className="h-40 flex items-center justify-center relative overflow-hidden"
-                  style={{ background: service.image }}
-                >
-                  <service.icon
-                    size={40}
-                    className="text-elegant-black/20 group-hover:text-wine-red transition-colors duration-500"
-                  />
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-wine-red/0 group-hover:bg-wine-red/5 transition-colors duration-500" />
-                </div>
-
-                {/* Content */}
-                <div className="p-5">
-                  <h3 className="font-display text-xl font-semibold text-elegant-black mb-2 group-hover:text-wine-red transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-warm-gray font-light leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-
-                {/* Bottom Gold Line */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-              </motion.div>
-            </ScrollReveal>
+            <ServiceCard key={`first-${service.title}`} service={service} />
+          ))}
+          {/* Duplicate set for seamless loop */}
+          {services.map((service, index) => (
+            <ServiceCard key={`second-${service.title}`} service={service} />
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .carousel-track {
+          animation: scroll 30s linear infinite;
+          width: max-content;
+        }
+
+        .carousel-track:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
+  );
+}
+
+function ServiceCard({ service }: { service: typeof services[0] }) {
+  return (
+    <motion.div
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="group relative bg-white rounded-2xl overflow-hidden shadow-luxury hover:shadow-luxury-hover transition-all duration-500 cursor-pointer flex-shrink-0 w-64"
+    >
+      {/* Image Placeholder */}
+      <div
+        className="h-40 flex items-center justify-center relative overflow-hidden"
+        style={{ background: service.image }}
+      >
+        <service.icon
+          size={40}
+          className="text-elegant-black/20 group-hover:text-wine-red transition-colors duration-500"
+        />
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-wine-red/0 group-hover:bg-wine-red/5 transition-colors duration-500" />
+      </div>
+
+      {/* Content */}
+      <div className="p-5">
+        <h3 className="font-display text-xl font-semibold text-elegant-black mb-2 group-hover:text-wine-red transition-colors duration-300">
+          {service.title}
+        </h3>
+        <p className="text-sm text-warm-gray font-light leading-relaxed">
+          {service.description}
+        </p>
+      </div>
+
+      {/* Bottom Gold Line */}
+      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+    </motion.div>
   );
 }
