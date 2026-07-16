@@ -12,67 +12,68 @@ import {
   Flower2,
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import Image from "next/image";
 
 const services = [
   {
     icon: Sparkles,
     title: "Unhas",
     description: "Manicure, pedicure e nail art com acabamento impecável.",
-    gradient: "linear-gradient(135deg, #4a1520 0%, #8b2040 50%, #2d0a12 100%)",
+    image: "/services/unhas.png",
   },
   {
     icon: Sun,
     title: "Solário",
     description: "Bronzeamento seguro e uniforme com equipamento moderno.",
-    gradient: "linear-gradient(135deg, #5a1a25 0%, #c44040 50%, #3d0f18 100%)",
+    image: "/services/solario.png",
   },
   {
     icon: Flower2,
     title: "Bem-Estar",
     description: "Momentos de relaxamento e revitalização completa.",
-    gradient: "linear-gradient(135deg, #3a1018 0%, #6b2030 50%, #2a0a12 100%)",
+    image: "/services/bem-estar.png",
   },
   {
     icon: Scissors,
     title: "Cabeleireiro",
     description: "Cortes modernos e clássicos personalizados para o seu estilo.",
-    gradient: "linear-gradient(135deg, #4a1520 0%, #8b2040 50%, #2d0a12 100%)",
+    image: "/services/cabeleireiro.png",
   },
   {
     icon: Paintbrush,
     title: "Coloração",
     description: "Técnicas avançadas de coloração para um visual renovado.",
-    gradient: "linear-gradient(135deg, #5a1a25 0%, #9b3045 50%, #3d0f18 100%)",
+    image: "/services/coloracao.png",
   },
   {
     icon: Droplets,
     title: "Tratamentos Capilares",
     description: "Hidratação profunda e reconstrução para cabelos saudáveis.",
-    gradient: "linear-gradient(135deg, #3a1018 0%, #7b2535 50%, #2a0a12 100%)",
+    image: "/services/tratamentos-capilares.png",
   },
   {
     icon: Wind,
     title: "Escovas",
     description: "Escovas perfeitas com acabamento profissional.",
-    gradient: "linear-gradient(135deg, #4a1520 0%, #8b2040 50%, #2d0a12 100%)",
+    image: "/services/escovas.png",
   },
   {
     icon: Heart,
     title: "Penteados",
     description: "Penteados para ocasiões especiais e no dia a dia.",
-    gradient: "linear-gradient(135deg, #5a1a25 0%, #a0354a 50%, #3d0f18 100%)",
+    image: "/services/penteados.png",
   },
   {
     icon: Paintbrush,
     title: "Maquiagem",
     description: "Maquiagem profissional para realçar a sua beleza natural.",
-    gradient: "linear-gradient(135deg, #3a1018 0%, #6b2030 50%, #2a0a12 100%)",
+    image: "/services/maquiagem.png",
   },
   {
     icon: Heart,
     title: "Estética",
     description: "Tratamentos faciais e corporais de última geração.",
-    gradient: "linear-gradient(135deg, #4a1520 0%, #8b2040 50%, #2d0a12 100%)",
+    image: "/services/estetica.png",
   },
 ];
 
@@ -109,12 +110,12 @@ export default function Services() {
         {/* Carousel Track */}
         <div className="carousel-track flex gap-6 px-6">
           {/* First set of services */}
-          {services.map((service, index) => (
-            <ServiceCard key={`first-${service.title}`} service={service} index={index + 1} />
+          {services.map((service) => (
+            <ServiceCard key={`first-${service.title}`} service={service} />
           ))}
           {/* Duplicate set for seamless loop */}
-          {services.map((service, index) => (
-            <ServiceCard key={`second-${service.title}`} service={service} index={index + 1} />
+          {services.map((service) => (
+            <ServiceCard key={`second-${service.title}`} service={service} />
           ))}
         </div>
       </div>
@@ -142,33 +143,25 @@ export default function Services() {
   );
 }
 
-function ServiceCard({ service, index }: { service: (typeof services)[0]; index: number }) {
-  const number = String(index).padStart(2, '0');
-
+function ServiceCard({ service }: { service: (typeof services)[0] }) {
   return (
     <motion.div
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-luxury hover:shadow-luxury-hover transition-all duration-500 cursor-pointer flex-shrink-0 w-72 h-[420px]"
+      className="group relative bg-white rounded-2xl overflow-hidden shadow-luxury hover:shadow-luxury-hover transition-all duration-500 cursor-pointer flex-shrink-0 w-72"
     >
-      {/* Image Section */}
-      <div
-        className="absolute inset-0 h-[65%] rounded-t-2xl overflow-hidden"
-        style={{ background: service.gradient }}
-      >
-        {/* Number */}
-        <div className="absolute top-4 left-4 z-10">
-          <span className="text-white/80 text-sm font-medium tracking-wider">{number}</span>
-        </div>
-
-        {/* Placeholder Image Effect */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-20">
-          <div className="w-32 h-32 rounded-full bg-white/10" />
-        </div>
+      {/* Image */}
+      <div className="relative h-80 overflow-hidden">
+        <Image
+          src={service.image}
+          alt={service.title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+        />
       </div>
 
       {/* Curved White Section */}
-      <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-white rounded-b-2xl">
+      <div className="relative bg-white pb-6">
         {/* Curved Top */}
         <div
           className="absolute -top-6 left-0 right-0 h-12 bg-white"
@@ -178,13 +171,13 @@ function ServiceCard({ service, index }: { service: (typeof services)[0]; index:
         />
 
         {/* Icon Circle */}
-        <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-light-gray">
+        <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-light-gray z-10">
           <service.icon size={20} className="text-wine-red" />
         </div>
 
         {/* Content */}
         <div className="pt-8 px-5 text-center">
-          <h3 className="font-display text-xl font-semibold text-wine-red mb-2">
+          <h3 className="font-display text-xl font-semibold text-wine-red mb-2 uppercase tracking-wider">
             {service.title}
           </h3>
           <p className="text-sm text-warm-gray font-light leading-relaxed mb-4">
