@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import Image from "next/image";
 
 const features = [
   "Atendimento personalizado",
@@ -21,16 +22,12 @@ export default function About() {
           <ScrollReveal direction="left">
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-luxury">
-                <div className="w-full h-full bg-gradient-to-br from-light-gray via-off-white to-light-gray flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-28 mx-auto mb-4 bg-wine-red rounded-t-full rounded-b-sm relative">
-                      <div className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gold" />
-                    </div>
-                    <span className="text-xs tracking-[0.3em] uppercase text-warm-gray">
-                      RED DOOR Studio
-                    </span>
-                  </div>
-                </div>
+                <Image
+                  src="/about.jpg"
+                  alt="Red Door Estúdio de Beleza"
+                  fill
+                  className="object-cover"
+                />
               </div>
               {/* Decorative Element */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl bg-gold/10 -z-10" />
