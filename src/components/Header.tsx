@@ -42,11 +42,11 @@ export default function Header() {
           {/* Logo */}
           <a href="#inicio" className="flex items-center">
             <Image
-              src="/logo.svg"
+              src="/logo.jpg"
               alt="Red Door Estúdio de Beleza"
-              width={120}
+              width={100}
               height={100}
-              className="h-auto"
+              className="h-auto rounded-lg"
               priority
             />
           </a>

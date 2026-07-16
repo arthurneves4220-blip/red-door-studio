@@ -35,11 +35,11 @@ export default function Footer() {
             <div className="lg:col-span-1">
               <a href="#inicio" className="inline-block mb-6">
                 <Image
-                  src="/logo.svg"
+                  src="/logo.jpg"
                   alt="Red Door Estúdio de Beleza"
-                  width={140}
+                  width={120}
                   height={120}
-                  className="h-auto"
+                  className="h-auto rounded-lg"
                 />
               </a>
               <p className="text-white/60 font-light leading-relaxed text-sm">
