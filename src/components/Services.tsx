@@ -10,127 +10,69 @@ import {
   Heart,
   Sun,
   Flower2,
-  Hand,
-  Zap,
-  Syringe,
-  Activity,
-  Stethoscope,
-  Dumbbell,
-  Leaf,
-  Droplet,
-  Gem,
-  NailPolish,
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const services = [
   {
-    icon: Scissors,
-    title: "Cabeleireiro",
-    description: "Cortes, coloração, tratamentos capilares e penteados profissionais.",
-    image: "linear-gradient(135deg, #f5f0e8 0%, #e8e0d5 100%)",
-  },
-  {
     icon: Sparkles,
-    title: "Manicure",
-    description: "Aplicação de unhas gel, manutenção, extensão, verniz e nail art.",
-    image: "linear-gradient(135deg, #f5e8f0 0%, #e8d5e0 100%)",
-  },
-  {
-    icon: Heart,
-    title: "Pedicure",
-    description: "Tratamento completo com SPA Red Door, parafina e massagem.",
-    image: "linear-gradient(135deg, #f0f5e8 0%, #e0e8d5 100%)",
-  },
-  {
-    icon: Droplets,
-    title: "Limpeza de Pele",
-    description: "Limpeza simples, profunda e tratamento para peles acneicas.",
-    image: "linear-gradient(135deg, #e8f0f5 0%, #d5e0e8 100%)",
-  },
-  {
-    icon: Hand,
-    title: "Massagens",
-    description: "Relaxamento, aromaterapia, bambuterapia e ritual de SPA.",
-    image: "linear-gradient(135deg, #f0f0f5 0%, #e0e0e8 100%)",
-  },
-  {
-    icon: Paintbrush,
-    title: "Maquiagem",
-    description: "Social, noiva, magic makeup e maquiagem profissional.",
-    image: "linear-gradient(135deg, #f5e8f0 0%, #e8d5e0 100%)",
-  },
-  {
-    icon: Flower2,
-    title: "Pestanas e Sobrancelhas",
-    description: "Lifting de pestanas e laminação de sobrancelha.",
-    image: "linear-gradient(135deg, #f5f2e8 0%, #e8e5d5 100%)",
-  },
-  {
-    icon: Zap,
-    title: "Epilação a Laser",
-    description: "IPL, SHR e Diodo para remoção definitiva de pelos.",
-    image: "linear-gradient(135deg, #f5e8e8 0%, #e8d5d5 100%)",
+    title: "Unhas",
+    description: "Manicure, pedicure e nail art com acabamento impecável.",
+    gradient: "linear-gradient(135deg, #4a1520 0%, #8b2040 50%, #2d0a12 100%)",
   },
   {
     icon: Sun,
     title: "Solário",
     description: "Bronzeamento seguro e uniforme com equipamento moderno.",
-    image: "linear-gradient(135deg, #f5f2e8 0%, #e8e5d5 100%)",
+    gradient: "linear-gradient(135deg, #5a1a25 0%, #c44040 50%, #3d0f18 100%)",
   },
   {
-    icon: Activity,
-    title: "BTL Exilis",
-    description: "Radiofrequência + ultrassom para rejuvenescimento e modelagem.",
-    image: "linear-gradient(135deg, #e8f0f5 0%, #d5e0e8 100%)",
+    icon: Flower2,
+    title: "Bem-Estar",
+    description: "Momentos de relaxamento e revitalização completa.",
+    gradient: "linear-gradient(135deg, #3a1018 0%, #6b2030 50%, #2a0a12 100%)",
   },
   {
-    icon: Stethoscope,
-    title: "Tecarterapia",
-    description: "Terapia por radiofrequência para dor e recuperação muscular.",
-    image: "linear-gradient(135deg, #f0f5e8 0%, #e0e8d5 100%)",
+    icon: Scissors,
+    title: "Cabeleireiro",
+    description: "Cortes modernos e clássicos personalizados para o seu estilo.",
+    gradient: "linear-gradient(135deg, #4a1520 0%, #8b2040 50%, #2d0a12 100%)",
   },
   {
-    icon: Gem,
-    title: "Tattoo e Piercing",
-    description: "Arte corporal e piercing profissional com equipamento estéril.",
-    image: "linear-gradient(135deg, #f5f0f0 0%, #e8e0e0 100%)",
+    icon: Paintbrush,
+    title: "Coloração",
+    description: "Técnicas avançadas de coloração para um visual renovado.",
+    gradient: "linear-gradient(135deg, #5a1a25 0%, #9b3045 50%, #3d0f18 100%)",
   },
   {
-    icon: Leaf,
-    title: "Epilação a Cera",
-    description: "Remoção de pelos com cera quente e morna profissional.",
-    image: "linear-gradient(135deg, #f0f5e8 0%, #e0e8d5 100%)",
-  },
-  {
-    icon: Dumbbell,
-    title: "Osteopatia e Acupuntura",
-    description: "Tratamentos holísticos para equilíbrio do corpo.",
-    image: "linear-gradient(135deg, #e8f0f5 0%, #d5e0e8 100%)",
+    icon: Droplets,
+    title: "Tratamentos Capilares",
+    description: "Hidratação profunda e reconstrução para cabelos saudáveis.",
+    gradient: "linear-gradient(135deg, #3a1018 0%, #7b2535 50%, #2a0a12 100%)",
   },
   {
     icon: Wind,
-    title: "Nutrição",
-    description: "Aconselhamento nutricional personalizado para saúde e bem-estar.",
-    image: "linear-gradient(135deg, #f5f2e8 0%, #e8e5d5 100%)",
+    title: "Escovas",
+    description: "Escovas perfeitas com acabamento profissional.",
+    gradient: "linear-gradient(135deg, #4a1520 0%, #8b2040 50%, #2d0a12 100%)",
   },
   {
-    icon: Droplet,
-    title: "Pressoterapia",
-    description: "Drenagem linfática e circulatória com equipamento profissional.",
-    image: "linear-gradient(135deg, #e8f0f5 0%, #d5e0e8 100%)",
+    icon: Heart,
+    title: "Penteados",
+    description: "Penteados para ocasiões especiais e no dia a dia.",
+    gradient: "linear-gradient(135deg, #5a1a25 0%, #a0354a 50%, #3d0f18 100%)",
   },
   {
-    icon: Syringe,
-    title: "Hydra Lips",
-    description: "Hidratação e preenchimento labial com ácido hialurônico.",
-    image: "linear-gradient(135deg, #f5e8f0 0%, #e8d5e0 100%)",
+    icon: Paintbrush,
+    title: "Maquiagem",
+    description: "Maquiagem profissional para realçar a sua beleza natural.",
+    gradient: "linear-gradient(135deg, #3a1018 0%, #6b2030 50%, #2a0a12 100%)",
   },
   {
-    icon: Sparkles,
-    title: "Nutricosmética",
-    description: "Suplementação nutricional para beleza de dentro para fora.",
-    image: "linear-gradient(135deg, #f0f0f5 0%, #e0e0e8 100%)",
+    icon: Heart,
+    title: "Estética",
+    description: "Tratamentos faciais e corporais de última geração.",
+    gradient: "linear-gradient(135deg, #4a1520 0%, #8b2040 50%, #2d0a12 100%)",
   },
 ];
 
@@ -167,12 +109,12 @@ export default function Services() {
         {/* Carousel Track */}
         <div className="carousel-track flex gap-6 px-6">
           {/* First set of services */}
-          {services.map((service) => (
-            <ServiceCard key={`first-${service.title}`} service={service} />
+          {services.map((service, index) => (
+            <ServiceCard key={`first-${service.title}`} service={service} index={index + 1} />
           ))}
           {/* Duplicate set for seamless loop */}
-          {services.map((service) => (
-            <ServiceCard key={`second-${service.title}`} service={service} />
+          {services.map((service, index) => (
+            <ServiceCard key={`second-${service.title}`} service={service} index={index + 1} />
           ))}
         </div>
       </div>
@@ -200,38 +142,70 @@ export default function Services() {
   );
 }
 
-function ServiceCard({ service }: { service: (typeof services)[0] }) {
+function ServiceCard({ service, index }: { service: (typeof services)[0]; index: number }) {
+  const number = String(index).padStart(2, '0');
+
   return (
     <motion.div
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-luxury hover:shadow-luxury-hover transition-all duration-500 cursor-pointer flex-shrink-0 w-64"
+      className="group relative bg-white rounded-2xl overflow-hidden shadow-luxury hover:shadow-luxury-hover transition-all duration-500 cursor-pointer flex-shrink-0 w-72 h-[420px]"
     >
-      {/* Image Placeholder */}
+      {/* Image Section */}
       <div
-        className="h-40 flex items-center justify-center relative overflow-hidden"
-        style={{ background: service.image }}
+        className="absolute inset-0 h-[65%] rounded-t-2xl overflow-hidden"
+        style={{ background: service.gradient }}
       >
-        <service.icon
-          size={40}
-          className="text-elegant-black/20 group-hover:text-wine-red transition-colors duration-500"
+        {/* Number */}
+        <div className="absolute top-4 left-4 z-10">
+          <span className="text-white/80 text-sm font-medium tracking-wider">{number}</span>
+        </div>
+
+        {/* Placeholder Image Effect */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-20">
+          <div className="w-32 h-32 rounded-full bg-white/10" />
+        </div>
+      </div>
+
+      {/* Curved White Section */}
+      <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-white rounded-b-2xl">
+        {/* Curved Top */}
+        <div
+          className="absolute -top-6 left-0 right-0 h-12 bg-white"
+          style={{
+            borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
+          }}
         />
-        {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-wine-red/0 group-hover:bg-wine-red/5 transition-colors duration-500" />
-      </div>
 
-      {/* Content */}
-      <div className="p-5">
-        <h3 className="font-display text-xl font-semibold text-elegant-black mb-2 group-hover:text-wine-red transition-colors duration-300">
-          {service.title}
-        </h3>
-        <p className="text-sm text-warm-gray font-light leading-relaxed">
-          {service.description}
-        </p>
-      </div>
+        {/* Icon Circle */}
+        <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-light-gray">
+          <service.icon size={20} className="text-wine-red" />
+        </div>
 
-      {/* Bottom Gold Line */}
-      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+        {/* Content */}
+        <div className="pt-8 px-5 text-center">
+          <h3 className="font-display text-xl font-semibold text-wine-red mb-2">
+            {service.title}
+          </h3>
+          <p className="text-sm text-warm-gray font-light leading-relaxed mb-4">
+            {service.description}
+          </p>
+
+          {/* Divider */}
+          <div className="w-8 h-px bg-wine-red/30 mx-auto mb-3" />
+
+          {/* Brand */}
+          <div className="text-center">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-wine-red font-medium">
+              RED DOOR
+            </span>
+            <br />
+            <span className="text-[7px] tracking-[0.2em] uppercase text-warm-gray">
+              ESTÚDIO DE BELEZA E BEM-ESTAR
+            </span>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 }
