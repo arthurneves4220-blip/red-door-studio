@@ -3,15 +3,23 @@
 import { motion } from "framer-motion";
 import {
   Scissors,
-  Palette,
+  Sparkles,
   Droplets,
   Wind,
-  Sparkles,
   Paintbrush,
   Heart,
-  Gem,
   Sun,
   Flower2,
+  Hand,
+  Zap,
+  Syringe,
+  Activity,
+  Stethoscope,
+  Dumbbell,
+  Leaf,
+  Droplet,
+  Gem,
+  NailPolish,
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
@@ -19,50 +27,50 @@ const services = [
   {
     icon: Scissors,
     title: "Cabeleireiro",
-    description: "Cortes modernos e clássicos personalizados para o seu estilo.",
+    description: "Cortes, coloração, tratamentos capilares e penteados profissionais.",
     image: "linear-gradient(135deg, #f5f0e8 0%, #e8e0d5 100%)",
   },
   {
-    icon: Palette,
-    title: "Coloração",
-    description: "Técnicas avançadas de coloração para um visual renovado.",
-    image: "linear-gradient(135deg, #f0e8f5 0%, #e0d5e8 100%)",
-  },
-  {
-    icon: Droplets,
-    title: "Tratamentos Capilares",
-    description: "Hidratação profunda e reconstrução para cabelos saudáveis.",
-    image: "linear-gradient(135deg, #e8f0f5 0%, #d5e0e8 100%)",
-  },
-  {
-    icon: Wind,
-    title: "Escovas",
-    description: "Escovas perfeitas com acabamento profissional.",
-    image: "linear-gradient(135deg, #f5f2e8 0%, #e8e5d5 100%)",
-  },
-  {
     icon: Sparkles,
-    title: "Penteados",
-    description: "Penteados para ocasiões especiais e no dia a dia.",
-    image: "linear-gradient(135deg, #f5e8e8 0%, #e8d5d5 100%)",
-  },
-  {
-    icon: Paintbrush,
-    title: "Maquiagem",
-    description: "Maquiagem profissional para realçar a sua beleza natural.",
+    title: "Manicure",
+    description: "Aplicação de unhas gel, manutenção, extensão, verniz e nail art.",
     image: "linear-gradient(135deg, #f5e8f0 0%, #e8d5e0 100%)",
   },
   {
     icon: Heart,
-    title: "Estética",
-    description: "Tratamentos faciais e corporais de última geração.",
+    title: "Pedicure",
+    description: "Tratamento completo com SPA Red Door, parafina e massagem.",
     image: "linear-gradient(135deg, #f0f5e8 0%, #e0e8d5 100%)",
   },
   {
-    icon: Gem,
-    title: "Unhas",
-    description: "Manicure, pedicure e nail art com acabamento impecável.",
-    image: "linear-gradient(135deg, #f5f0f0 0%, #e8e0e0 100%)",
+    icon: Droplets,
+    title: "Limpeza de Pele",
+    description: "Limpeza simples, profunda e tratamento para peles acneicas.",
+    image: "linear-gradient(135deg, #e8f0f5 0%, #d5e0e8 100%)",
+  },
+  {
+    icon: Hand,
+    title: "Massagens",
+    description: "Relaxamento, aromaterapia, bambuterapia e ritual de SPA.",
+    image: "linear-gradient(135deg, #f0f0f5 0%, #e0e0e8 100%)",
+  },
+  {
+    icon: Paintbrush,
+    title: "Maquiagem",
+    description: "Social, noiva, magic makeup e maquiagem profissional.",
+    image: "linear-gradient(135deg, #f5e8f0 0%, #e8d5e0 100%)",
+  },
+  {
+    icon: Flower2,
+    title: "Pestanas e Sobrancelhas",
+    description: "Lifting de pestanas e laminação de sobrancelha.",
+    image: "linear-gradient(135deg, #f5f2e8 0%, #e8e5d5 100%)",
+  },
+  {
+    icon: Zap,
+    title: "Epilação a Laser",
+    description: "IPL, SHR e Diodo para remoção definitiva de pelos.",
+    image: "linear-gradient(135deg, #f5e8e8 0%, #e8d5d5 100%)",
   },
   {
     icon: Sun,
@@ -71,9 +79,57 @@ const services = [
     image: "linear-gradient(135deg, #f5f2e8 0%, #e8e5d5 100%)",
   },
   {
-    icon: Flower2,
-    title: "Bem-Estar",
-    description: "Momentos de relaxamento e revitalização completa.",
+    icon: Activity,
+    title: "BTL Exilis",
+    description: "Radiofrequência + ultrassom para rejuvenescimento e modelagem.",
+    image: "linear-gradient(135deg, #e8f0f5 0%, #d5e0e8 100%)",
+  },
+  {
+    icon: Stethoscope,
+    title: "Tecarterapia",
+    description: "Terapia por radiofrequência para dor e recuperação muscular.",
+    image: "linear-gradient(135deg, #f0f5e8 0%, #e0e8d5 100%)",
+  },
+  {
+    icon: Gem,
+    title: "Tattoo e Piercing",
+    description: "Arte corporal e piercing profissional com equipamento estéril.",
+    image: "linear-gradient(135deg, #f5f0f0 0%, #e8e0e0 100%)",
+  },
+  {
+    icon: Leaf,
+    title: "Epilação a Cera",
+    description: "Remoção de pelos com cera quente e morna profissional.",
+    image: "linear-gradient(135deg, #f0f5e8 0%, #e0e8d5 100%)",
+  },
+  {
+    icon: Dumbbell,
+    title: "Osteopatia e Acupuntura",
+    description: "Tratamentos holísticos para equilíbrio do corpo.",
+    image: "linear-gradient(135deg, #e8f0f5 0%, #d5e0e8 100%)",
+  },
+  {
+    icon: Wind,
+    title: "Nutrição",
+    description: "Aconselhamento nutricional personalizado para saúde e bem-estar.",
+    image: "linear-gradient(135deg, #f5f2e8 0%, #e8e5d5 100%)",
+  },
+  {
+    icon: Droplet,
+    title: "Pressoterapia",
+    description: "Drenagem linfática e circulatória com equipamento profissional.",
+    image: "linear-gradient(135deg, #e8f0f5 0%, #d5e0e8 100%)",
+  },
+  {
+    icon: Syringe,
+    title: "Hydra Lips",
+    description: "Hidratação e preenchimento labial com ácido hialurônico.",
+    image: "linear-gradient(135deg, #f5e8f0 0%, #e8d5e0 100%)",
+  },
+  {
+    icon: Sparkles,
+    title: "Nutricosmética",
+    description: "Suplementação nutricional para beleza de dentro para fora.",
     image: "linear-gradient(135deg, #f0f0f5 0%, #e0e0e8 100%)",
   },
 ];
@@ -111,11 +167,11 @@ export default function Services() {
         {/* Carousel Track */}
         <div className="carousel-track flex gap-6 px-6">
           {/* First set of services */}
-          {services.map((service, index) => (
+          {services.map((service) => (
             <ServiceCard key={`first-${service.title}`} service={service} />
           ))}
           {/* Duplicate set for seamless loop */}
-          {services.map((service, index) => (
+          {services.map((service) => (
             <ServiceCard key={`second-${service.title}`} service={service} />
           ))}
         </div>
@@ -123,7 +179,7 @@ export default function Services() {
 
       <style jsx>{`
         .carousel-track {
-          animation: scroll 30s linear infinite;
+          animation: scroll 40s linear infinite;
           width: max-content;
         }
 
@@ -144,7 +200,7 @@ export default function Services() {
   );
 }
 
-function ServiceCard({ service }: { service: typeof services[0] }) {
+function ServiceCard({ service }: { service: (typeof services)[0] }) {
   return (
     <motion.div
       whileHover={{ y: -8 }}
