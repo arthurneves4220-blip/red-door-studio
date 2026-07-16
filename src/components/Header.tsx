@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#inicio", label: "Inicio" },
@@ -39,18 +40,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-3">
-            <div className="w-10 h-14 rounded-t-full bg-wine-red flex items-center justify-center relative">
-              <div className="absolute right-1.5 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-gold" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-semibold tracking-[0.15em] text-elegant-black">
-                RED DOOR
-              </span>
-              <span className="text-[10px] tracking-[0.3em] text-warm-gray uppercase">
-                Studio
-              </span>
-            </div>
+          <a href="#inicio" className="flex items-center">
+            <Image
+              src="/logo.svg"
+              alt="Red Door Estúdio de Beleza"
+              width={120}
+              height={100}
+              className="h-auto"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation */}
